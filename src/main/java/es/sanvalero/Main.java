@@ -46,29 +46,37 @@ public class Main {
         bart.colocarJugador(tableroB);
         homer.colocarJugador(tableroH);
 
+        //Posicionar Pociones (P)
+        bart.colocarPociones(tableroB, tableroVisibleB);
+        homer.colocarPociones(tableroH, tableroVisibleH);
+
+//        //Copia ubicacion pociones
+//        bart.copiarPocion(tableroVisibleB);
+//        homer.copiarPocion(tableroVisibleH);
+
         //Copia ubicacion de los jugadores en el tablero visible
         bart.copiarJugador(tableroVisibleB);
         homer.copiarJugador(tableroVisibleH);
 
         //Movimientos de los jugadores
         do {
-                //Turno Bart
+            //Turno Bart
 
             //tableroBart.imprimirTablero(tableroB); //Activar para imprimir el tablero real. Con enemigos visibles
             tableroBart.imprimirTablero(tableroVisibleB);  // Impresión de tablero antes de mover
 
-                bart.movimientoJugador(tableroB, bart, tableroBart, tableroVisibleB);
-                if (bart.alcanzarMeta(tableroB) || bart.jugadorMuerto()){  //Si Bart muere o llega a la meta acaba el juego
-                    seguirJugando = false;
-                    continue;
-                }
+            bart.movimientoJugador(tableroB, bart, tableroBart, tableroVisibleB);
+            if (bart.alcanzarMeta(tableroB) || bart.jugadorMuerto()) {  //Si Bart muere o llega a la meta acaba el juego
+                seguirJugando = false;
+                continue;
+            }
 
-                //Turno Homer
+            //Turno Homer
 
             //tableroHomer.imprimirTablero(tableroH); //Activar para imprimir el tablero real. Con enemigos visibles
             tableroHomer.imprimirTablero(tableroVisibleH);  // Impresión de tablero antes de mover
             homer.movimientoJugador(tableroH, homer, tableroHomer, tableroVisibleH);
-            if (homer.alcanzarMeta(tableroH) || homer.jugadorMuerto()){ //Si Homer muere o llega a la meta acaba el juego
+            if (homer.alcanzarMeta(tableroH) || homer.jugadorMuerto()) { //Si Homer muere o llega a la meta acaba el juego
                 seguirJugando = false;
             }
 

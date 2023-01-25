@@ -1,7 +1,7 @@
 package es.sanvalero;
 
 public class Tablero {
-    char casillasLibres;
+    final char casillasLibres;
 
 
     public Tablero(int tamanoTablero) {
@@ -26,7 +26,6 @@ public class Tablero {
             System.out.println();
         }
     }
-
 
 }
 
